@@ -23,9 +23,7 @@
       </div>
     </div>
 
-    <div class="box odom light-bg">
-      <OdometryReading v-bind:odom="odom"/>
-    </div>
+    
     <div class="box cameras light-bg">
       <Cameras v-bind:servosData="lastServosMessage" v-bind:connections="connections.cameras"/>
     </div>
@@ -35,11 +33,13 @@
     <div class="box sa_testing light-bg">
       <SATestingControls/>
     </div>
-    <div class="box waypoints light-bg">
-      <WaypointEditor v-bind:odom="odom" />
-    </div>
-    <div class="box sa_controls light-bg">
-      <SAControls/>
+    <div class="box odom_new light-bg">
+      <div class="box odom light-bg">
+        <OdometryReading v-bind:odom="odom"/>
+      </div>
+      <div class="box sa_new light-bg">  
+        <SAControls/>
+      </div>
     </div>
   </div>
 </template>
@@ -230,7 +230,13 @@ export default {
         padding: 10px;
         border: 1px solid black;
     }
-
+    .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    }
+    
     .light-bg {
         background-color: LightGrey;
     }
